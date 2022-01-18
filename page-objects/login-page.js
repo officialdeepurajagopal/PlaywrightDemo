@@ -1,10 +1,10 @@
 const { password } = require("../data/data");
 
 locators = {
-  "username_input": `//input[@name="user"]`,
+  "username_input": `//input[@name="user-name"]`,
   "password_input": `//input[@name="password"]`,
-  "login_button": `//button[@type="submit"]`,
-  "loggedinusertext": `//div[contains(text(), 'deepu@podop.com')]`
+  "login_button": `//input[@type="submit"]`,
+  "productsText": `//span[contains(text(), 'Products')]`
 }
 
 class LoginPage {
@@ -25,8 +25,8 @@ class LoginPage {
   }
 
   async verifyLogin() {
-    await page.waitForSelector(locators.loggedinusertext);
-    const visible = await page.isVisible(locators.loggedinusertext);
+    await page.waitForSelector(locators.productsText);
+    const visible = await page.isVisible(locators.productsText);
     return expect(visible).to.equal(true);
   }
 }

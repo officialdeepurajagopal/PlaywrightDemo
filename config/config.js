@@ -1,3 +1,3 @@
 Object.assign(global, {
-  BASE_URL: 'https://dashboard.podop.com'
+  BASE_URL: 'https://www.saucedemo.com/'
 });

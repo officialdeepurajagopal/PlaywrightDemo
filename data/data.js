@@ -1,5 +1,5 @@
 module.exports = {
-    title: "PodOp Project Workspace",
-    username: "deepu@podop.com",
-    password: "podop123"
+    title: "Swag Labs",
+    username: "standard_user",
+    password: "secret_sauce"
 }
