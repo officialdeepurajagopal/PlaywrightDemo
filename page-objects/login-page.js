@@ -1,11 +1,24 @@
-locators = {
-  "username_input": `//input[@name="user-name"]`,
-  "password_input": `//input[@name="password"]`,
-  "login_button": `//input[@type="submit"]`,
-  "productsText": `//span[contains(text(), 'Products')]`
-}
-
 class LoginPage {
+
+// Elements
+
+  get username_input(){
+    return `//input[@name="user-name"]`
+  }
+
+  get password_input(){
+    return `//input[@name="password"]`
+  }
+
+  get login_button(){
+    return `//input[@type="submit"]`
+  }
+
+  productsText(text){
+    return `//span[contains(text(), '${text}')]`
+  }
+
+// Methods
 
   async navigateToLoginScreen() {
     await page.goto(global.BASE_URL);
@@ -16,15 +29,15 @@ class LoginPage {
   }
 
   async enterCredentials(username,password) {
-    await page.waitForSelector(locators.username_input);
-    await page.fill(locators.username_input, username);
-    await page.fill(locators.password_input, password);
-    await page.click(locators.login_button);
+    await page.waitForSelector(this.username_input);
+    await page.fill(this.username_input, username);
+    await page.fill(this.password_input, password);
+    await page.click(this.login_button);
   }
 
   async verifyLogin() {
-    await page.waitForSelector(locators.productsText);
-    const visible = await page.isVisible(locators.productsText);
+    await page.waitForSelector(this.productsText('Products'));
+    const visible = await page.isVisible(this.productsText('Products'));
     expect(visible).to.equal(true);
   }
 }
