@@ -1,5 +1,3 @@
-const { password } = require("../data/data");
-
 locators = {
   "username_input": `//input[@name="user-name"]`,
   "password_input": `//input[@name="password"]`,
@@ -18,7 +16,7 @@ class LoginPage {
   }
 
   async enterCredentials(username,password) {
-    const element = await page.waitForSelector(locators.username_input);
+    await page.waitForSelector(locators.username_input);
     await page.fill(locators.username_input, username);
     await page.fill(locators.password_input, password);
     await page.click(locators.login_button);
@@ -27,7 +25,7 @@ class LoginPage {
   async verifyLogin() {
     await page.waitForSelector(locators.productsText);
     const visible = await page.isVisible(locators.productsText);
-    return expect(visible).to.equal(true);
+    expect(visible).to.equal(true);
   }
 }
 

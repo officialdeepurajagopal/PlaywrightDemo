@@ -11,10 +11,10 @@ let options = {
         metadata: {
             "App Version":"0.0.1",
             "Test Environment": "STAGING",
-            "Browser": "Chrome  54.0.2840.98",
+            "Browser": "Chrome",
             "Platform": "MacOs",
             "Parallel": "Scenarios",
-            "Executed": "Remote"
+            "Executed": "Local"
         }
     };
 

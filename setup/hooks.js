@@ -13,7 +13,7 @@ const options = {
 // Create a global browser for the test session.
 BeforeAll(async () => {
   console.log('before all ...');
-  global.browser = await playwright['firefox'].launch(options);
+  global.browser = await playwright['chromium'].launch(options);
 });
 
 AfterAll(async () => {
