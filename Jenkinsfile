@@ -23,15 +23,6 @@ pipeline {
        }
     }
     post {
-        always {
-            allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'reports/allure-results']]
-            ])
-        }
         success {
            echo 'passed'
         }
