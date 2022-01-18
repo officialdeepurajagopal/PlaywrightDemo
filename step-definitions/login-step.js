@@ -9,9 +9,9 @@ Given('I am on the login screen', async function() {
 });
 
 When('I fill the login form with valid credentials', async function() {
-  await loginPage.submitLoginForm(data.username,data.password);
+  await loginPage.enterCredentials(data.username,data.password);
 });
 
 Then('I should be able to see the home screen', async function() {
-  await loginPage.verifyAfterLoginPage();
+  await loginPage.verifyLogin();
 });

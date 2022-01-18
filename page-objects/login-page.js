@@ -17,14 +17,14 @@ class LoginPage {
     await expect(await page.title()).to.equal(title);
   }
 
-  async submitLoginForm(username,password) {
+  async enterCredentials(username,password) {
     const element = await page.waitForSelector(locators.username_input);
     await page.fill(locators.username_input, username);
     await page.fill(locators.password_input, password);
     await page.click(locators.login_button);
   }
 
-  async verifyAfterLoginPage() {
+  async verifyLogin() {
     await page.waitForSelector(locators.loggedinusertext);
     const visible = await page.isVisible(locators.loggedinusertext);
     return expect(visible).to.equal(true);
