@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout SCM') {
            steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'afa4ef5f-6838-4a28-b3f6-2b40b8c92718', url: 'https://github.com/officialdeepurajagopal/WDIODemo.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'afa4ef5f-6838-4a28-b3f6-2b40b8c92718', url: 'https://github.com/officialdeepurajagopal/PlaywrightDemo.git']]])
            }
        }
 
@@ -18,7 +18,7 @@ pipeline {
 
        stage('Run Test') {
            steps {
-               sh 'npm run test'
+               sh 'npm test'
            }
        }
     }
