@@ -4,8 +4,10 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js --require features/**/*.js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet",
-    "test-single": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js --require features/**/*.js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet"
+    "test1": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js --require features/**/*.js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet",
+    "test-tag": "node ./node_modules/.bin/cucumber-js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet --require step-definitions/**/*.js --tags",
+    "test-regression": "node ./node_modules/.bin/cucumber-js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet --require step-definitions/**/*.js --tags '@regression'",
+    "test-smoke": "node ./node_modules/.bin/cucumber-js --format html:./reports/cucumber_report.html --format summary --format @cucumber/pretty-formatter --no-strict --publish-quiet --require step-definitions/**/*.js --tags '@smoke'"
   },
   "keywords": [],
   "author": "Deepu Rajagopal",

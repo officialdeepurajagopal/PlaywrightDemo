@@ -2,10 +2,26 @@ const playwright = require('playwright');
 const { BeforeAll, Before, After, AfterAll , Status } = require('@cucumber/cucumber');
 const cucumber = require('../cucumber');
 
-// const { World } = require('@cucumber/cucumber')
+const { World } = require('@cucumber/cucumber')
 
 // Launch options.
 const options = {
+  headless: false,
+  slowMo: 100,
+  specs: [
+    './features/**/*.feature'
+],
+suites: {
+    smoke: [
+        './features/login.feature'
+    ],
+    otherFeature: [
+        // ...
+    ]
+},
+};
+
+const suite = {
   headless: false,
   slowMo: 100
 };

@@ -42,4 +42,4 @@ class LoginPage {
   }
 }
 
-module.exports = { LoginPage };
+module.exports = {LoginPage};
